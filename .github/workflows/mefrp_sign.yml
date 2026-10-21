@@ -1,0 +1,24 @@
+name: ME Frp 每日签到
+
+on:
+  schedule:
+    # 每天 UTC 01:23，也就是北京时间 09:23
+    - cron: '23 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: 运行签到脚本
+        env:
+          MEFRP_ACCESS_KEY: ${{ secrets.MEFRP_ACCESS_KEY }}
+        run: python mefrp_sign.py
