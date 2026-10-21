@@ -2,7 +2,7 @@ name: ME Frp 每日签到
 
 on:
   schedule:
-    # 每天 UTC 16:01，北京时间 00:01
+    # 每天 UTC 16:01，北京时间次日 00:01
     - cron: '1 16 * * *'
   workflow_dispatch:
 
@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 检出代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: 设置 Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
