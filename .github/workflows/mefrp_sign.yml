@@ -2,8 +2,8 @@ name: ME Frp 每日签到
 
 on:
   schedule:
-    # 每天 UTC 01:23，也就是北京时间 09:23
-    - cron: '23 1 * * *'
+    # 每天 UTC 16:01，北京时间 00:01
+    - cron: '1 16 * * *'
   workflow_dispatch:
 
 jobs:
