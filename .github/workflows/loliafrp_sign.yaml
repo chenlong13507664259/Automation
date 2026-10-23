@@ -1,0 +1,26 @@
+name: Lolia Frp 每日签到
+
+on:
+  schedule:
+    - cron: '1 16 * * *'
+    - cron: '1 22 * * *'
+    - cron: '1 4 * * *'
+    - cron: '1 10 * * *'
+  workflow_dispatch:
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v6
+
+      - name: 设置 Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: 运行签到脚本
+        env:
+          LoliaFRP_ACCESS_KEY: ${{ secrets.LoliaFRP_ACCESS_KEY }}
+        run: python loliafrp_checkin.py
