@@ -3,7 +3,7 @@
 Lolia FRP 每日签到脚本
 用法: python lolia_checkin.py
 """
-
+import os
 import urllib.request
 import urllib.error
 import json
