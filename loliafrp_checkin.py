@@ -58,7 +58,7 @@ def main():
 
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"{'='*50}")
-    print(f"  Lolia FRP 每日签到")
+    print(f"  Lolia FRP 签到")
     print(f"  时间: {now}")
     print(f"{'='*50}")
 
@@ -94,7 +94,7 @@ def main():
     elif code == 400:
         print(f"  [WARN] {msg}")
         if "traffic_bytes" in result_data:
-            print(f"  今日可获得流量: {result_data.get('traffic_gb', '?')} GB")
+            print(f"  今日获得流量: {result_data.get('traffic_gb', '?')} GB")
     else:
         print(f"  [FAIL] 签到失败: {msg}")
 
