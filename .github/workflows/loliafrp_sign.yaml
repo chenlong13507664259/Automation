@@ -22,5 +22,5 @@ jobs:
 
       - name: 运行签到脚本
         env:
-          LoliaFRP_ACCESS_KEY: ${{ secrets.LoliaFRP_ACCESS_KEY }}
+          LOLIAFRP_ACCESS_KEY: ${{ secrets.LOLIAFRP_ACCESS_KEY }}
         run: python loliafrp_checkin.py
